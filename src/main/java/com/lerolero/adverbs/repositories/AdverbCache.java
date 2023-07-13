@@ -29,6 +29,9 @@ public class AdverbCache {
 		if (ids == null || ids.size() == 0) {
 			ids = new ArrayList<>();
 			repo.findAll().map(Adverb::getId).doOnNext(i -> ids.add(i)).subscribe();
+			return Mono.fromSupplier(() -> new Adverb())
+				.doOnNext(v -> v.setId("0"))
+				.doOnNext(v -> v.setString("Hello"));
 		}
 		Adverb defaultAdverb = new Adverb();
 		return Mono.fromSupplier(() -> ids.get((int)(Math.random() * ids.size())))

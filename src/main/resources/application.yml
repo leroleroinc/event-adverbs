@@ -1,0 +1,13 @@
+spring:
+    rabbitmq:
+        host: rabbitmq
+        port: 5672
+        username: guest
+        password: guest
+    cloud:
+        stream:
+            bindings:
+                adverbfunction-in-0:
+                    destination: adverbrequest
+                adverbfunction-out-0:
+                    destination: adverbresponse
