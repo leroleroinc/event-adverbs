@@ -1,9 +1,6 @@
 spring:
-    rabbitmq:
-        host: rabbitmq
-        port: 5672
-        username: guest
-        password: guest
+    kafka:
+        bootstrap-servers: kafka:9092
     cloud:
         stream:
             bindings:
